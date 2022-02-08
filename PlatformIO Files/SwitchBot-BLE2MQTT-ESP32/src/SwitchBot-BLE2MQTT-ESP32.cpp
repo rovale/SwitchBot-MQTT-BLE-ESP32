@@ -348,15 +348,15 @@
 /* Motion and Contact and Meter: (CAN BE MESHED) Enter the MAC addresses of the switchbot devices into all or most of the ESP32s */
 
 /* Wifi Settings */
-static const char* host = "esp32";                                  //  Unique name for ESP32. The name detected by your router and MQTT. If you are using more then 1 ESPs to control different switchbots be sure to use unique hostnames. Host is the MQTT Client name and is used in MQTT topics
-static const char* ssid = "SSID";                                   //  WIFI SSID
-static const char* password = "Password";                           //  WIFI Password
+static const char* host = "ble2mqtt";                          //  Unique name for ESP32. The name detected by your router and MQTT. If you are using more then 1 ESPs to control different switchbots be sure to use unique hostnames. Host is the MQTT Client name and is used in MQTT topics
+static const char* ssid = "The_Real_Housewifi_of_North";    //  WIFI SSID
+static const char* password = "x";                   //  WIFI Password
 
 /* MQTT Settings */
 /* MQTT Client name is set to WIFI host from Wifi Settings*/
-static const char* mqtt_host = "192.168.0.1";                       //  MQTT Broker server ip
-static const char* mqtt_user = "switchbot";                         //  MQTT Broker username. If empty or NULL, no authentication will be used
-static const char* mqtt_pass = "switchbot";                         //  MQTT Broker password
+static const char* mqtt_host = "192.168.68.134";                       //  MQTT Broker server ip
+static const char* mqtt_user = "";                         //  MQTT Broker username. If empty or NULL, no authentication will be used
+static const char* mqtt_pass = "";                         //  MQTT Broker password
 static const int mqtt_port = 1883;                                  //  MQTT Port
 static const std::string mqtt_main_topic = "switchbot";             //  MQTT main topic
 
@@ -385,14 +385,13 @@ static std::map<std::string, std::string> allBots = {
 /* Switchbot Curtain Settings */
 static const int curtainClosedPosition = 10;    // When 2 curtains are controlled (left -> right and right -> left) it's possible one of the curtains pushes one of the switchbots more open. Change this value to set a position where a curtain is still considered closed
 static std::map<std::string, std::string> allCurtains = {
-  /*{ "curtainone", "xX:xX:xX:xX:xX:xX" },
-    { "curtaintwo", "yY:yY:yY:yY:yY:yY" }*/
+    { "curtain_left", "da:77:69:b1:1e:d2" },
+    { "curtain_right", "de:68:06:8a:6a:68" }
 };
 
 /* Switchbot Meter Settings */
 static std::map<std::string, std::string> allMeters = {
-  /*{ "meterone", "xX:xX:xX:xX:xX:xX" },
-    { "metertwo", "yY:yY:yY:yY:yY:yY" }*/
+  { "bathroom_meter", "d7:23:0a:bb:80:69" }
 };
 
 /* Switchbot Contact Sensor Settings */
@@ -456,9 +455,8 @@ static std::map<std::string, std::string> allBotTypes = {     // OPTIONAL - (DEF
 
 
 /* ESP32 LED Settings */
-#ifndef LED_BUILTIN
-	#define LED_BUILTIN 2                            // If your board doesn't have a defined LED_BUILTIN, replace 2 with the LED pin value
-#endif
+// #define LED_BUILTIN 5                              // If your board doesn't have a defined LED_BUILTIN, uncomment this line and replace 2 with the LED pin value
+#define LED_PIN LED_BUILTIN                          // If your board doesn't have a defined LED_BUILTIN (You will get a compile error), uncomment the line above
 static const bool ledHighEqualsON = true;            // ESP32 board LED ON=HIGH (Default). If your ESP32 LED is turning OFF on scanning and turning ON while IDLE, then set this value to false
 static const bool ledOnBootScan = true;              // Turn on LED during initial boot scan
 static const bool ledOnScan = true;                  // Turn on LED while scanning (non-boot)

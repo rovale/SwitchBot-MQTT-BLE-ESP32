@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\OneVision.Reporting"
+		},
+		{
+			"name": "SwitchBot-BLE2MQTT-ESP32",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
