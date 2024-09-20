@@ -354,7 +354,7 @@ static const char* password = "x";                   //  WIFI Password
 
 /* MQTT Settings */
 /* MQTT Client name is set to WIFI host from Wifi Settings*/
-static const char* mqtt_host = "192.168.68.134";                       //  MQTT Broker server ip
+static const char* mqtt_host = "192.168.2.15";                       //  MQTT Broker server ip
 static const char* mqtt_user = "";                         //  MQTT Broker username. If empty or NULL, no authentication will be used
 static const char* mqtt_pass = "";                         //  MQTT Broker password
 static const int mqtt_port = 1883;                                  //  MQTT Port
@@ -385,8 +385,10 @@ static std::map<std::string, std::string> allBots = {
 /* Switchbot Curtain Settings */
 static const int curtainClosedPosition = 10;    // When 2 curtains are controlled (left -> right and right -> left) it's possible one of the curtains pushes one of the switchbots more open. Change this value to set a position where a curtain is still considered closed
 static std::map<std::string, std::string> allCurtains = {
-    { "curtain_left", "da:77:69:b1:1e:d2" },
-    { "curtain_right", "de:68:06:8a:6a:68" }
+    { "curtain_left", "d9:a3:1a:31:4c:f4" },
+    { "curtain_right", "d8:66:7f:51:12:92" },
+    { "curtain_office1", "da:77:69:b1:1e:d2" },
+    { "curtain_office2", "de:68:06:8a:6a:68" }
 };
 
 /* Switchbot Meter Settings */
