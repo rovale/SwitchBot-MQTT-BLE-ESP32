@@ -387,8 +387,9 @@ static const int curtainClosedPosition = 10;    // When 2 curtains are controlle
 static std::map<std::string, std::string> allCurtains = {
     { "curtain_left", "d9:a3:1a:31:4c:f4" },
     { "curtain_right", "d8:66:7f:51:12:92" },
-    { "curtain_office1", "da:77:69:b1:1e:d2" },
-    { "curtain_office2", "de:68:06:8a:6a:68" }
+    { "office_shades", "da:77:69:b1:1e:d2" },
+    { "tv_shades", "de:68:06:8a:6a:68" },
+    { "balcony_shades", "d5:a2:77:63:bf:8e" },
 };
 
 /* Switchbot Meter Settings */
